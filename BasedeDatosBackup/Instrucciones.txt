@@ -1,0 +1,2 @@
+al tpocrud.sql vas a tener que montarlo en tu propio phpmyadmin, para eso el archivo este backup asi podes recrear la pagina al 100%
+Es eso o crearle tu propia base de datos y usar el mismo orden y nombres pero mucha fiaca xd
