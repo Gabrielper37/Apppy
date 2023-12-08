@@ -1,0 +1,702 @@
+@font-face {
+    font-family:rammstein ;
+    src: url(../font/rammstein.ttf);
+}
+
+  @font-face {
+    font-family: gothamexp;
+    src: url(../font/gothamknightsexpand.ttf);
+  }
+  @font-face {
+    font-family: rocks;
+    src: url(../font/chineserocksrg.otf);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+body, html {
+    height: 100%;
+    text-decoration-line: none;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    background-color: #000000;
+
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+/* ---------- INICIO ----------- */
+.topicon1{
+  display: none;
+}
+.topicon {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  z-index: 1000;
+  justify-content: center;
+  background-color: black;
+  text-align: center;
+}
+.topicon_index  {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  z-index: 1000;
+  justify-content: center;
+  background-color: black;
+  text-align: center;
+  font-family: rammstein;
+  font-size: 3.5em;
+}
+
+.topicon h1 {
+  font-family: rammstein;
+  text-align: center;
+  color: white;
+  font-size: 3.5em;
+  width: fit-content;
+  background-color: black;
+  
+}
+ .topicon_index a{
+    font-family: rammstein;
+    width: fit-content;
+    margin: 0.67em 0em;
+    
+ }
+
+
+
+.contenedor {
+  background-color: black;
+  color: white;
+  padding: 2px;
+}
+
+#block {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: static;
+  }
+
+  #block2 {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    position: static;
+    display: none;
+  }  
+  
+  
+  
+ /*  .nav a:hover {
+    color: #fff;
+  } */
+  
+  .contenedor {
+    color: white;
+    background-color: #000000;
+    opacity: 1;
+    background-size: 12px 12px;
+    background-image: repeating-linear-gradient(
+      to right,
+      #160606,
+      #160606 0.6000000000000001px,
+      #000000 0.6000000000000001px,
+      #000000
+    );
+  }
+  span a {
+    text-decoration: none;
+    color: red;
+  }
+  .head p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .head {
+    text-align: center;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+  }
+  img {
+    width: 100%;
+  }
+  
+  .content {
+    line-height: 0;
+    word-spacing: 0.1em;
+    display: inline-block;
+    margin: 30px 2% 0 2%;
+  }
+/*   .collumns{display: flex;
+    
+    } */
+
+  .collumn {
+    font-size: 14px;
+    line-height: 20px;
+    width: 30%;
+    display: inline-block;
+    padding: 0 1% 0 1%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    transition: all 0.7s;
+  }
+  
+  .collumn ul {
+    text-align: left;
+  }
+  
+  .collumn .headline {
+    text-align: center;
+    line-height: normal;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .collumn .headline.hl3 {
+    font-family: rocks;
+    font-weight: 400;
+    font-size: 36px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+  }
+  .collumn .headline.hl4 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+  }
+  .collumn .headline.hl4:before {
+    content: "";
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+  }
+  .collumn .headline.hl4:after {
+    content: "";
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+
+
+/* ---------- DISCOGRAFIA ----------- */
+.color_background{
+  background-color: #000;
+}
+.row_album{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    width: 85%;
+}
+
+.row_album img{
+    width: 400px;
+    height: 400px;
+}
+.row_album iframe{
+    margin-top: 10px;
+}
+
+.albumes h2,p{
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0%;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+}
+
+.albumes img:hover {
+    -webkit-transform: scale(0.8);
+	transform: scale(0.8);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    border-radius: 20px;
+}
+/* ---------- NOSOTROS ----------- */
+
+.form_mapa{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+    gap: 40px;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+}
+.form_mapa h2{
+  font-family:'gothamexp', sans-serif; 
+  font-size: 2.6em;
+  margin-top: 0px;
+  
+}
+
+
+.formulario_contacto{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: auto;
+    
+}
+.formulario_contacto input{
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+.formulario_contacto textarea{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;}
+
+button{
+    height: 50px;
+    color: rgb(0, 0, 0);
+    background-color:rgb(255, 255, 255);
+    font-size: 1em;
+}
+
+.form_mapa .mapa{
+    width:800px;
+    height:580px;
+}
+
+.integrante div {
+  background-color: #4f4f4f;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  width: -webkit-fill-available;
+}
+.integrante p{
+  background-color: #ffffff00;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+
+    
+        /* -- integrantes --- */
+.titulo{
+    font-family: 'gothamexp', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    color: #ffffff;
+}
+        
+.grupo10{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center
+}
+.integrante{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.integrante h4{
+    font-family: 'rocks', sans-serif;
+    font-size: 3em;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    color: #ffffff;
+}
+
+.grupo10 img{
+    height: 300px;
+}
+
+/* ---------- HISTORIA ----------- */
+
+.main_oscuro{
+    background-color: #000;
+}
+.articulo_historia img{
+    width: 100%;
+}
+
+.articulo_historia{
+    width:50% ;
+    margin: auto;
+}
+
+.articulo_historia p{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+
+.articulo_historia .p_blanco{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 30px;
+    font-weight: 500;
+    border: 5px solid red;
+    text-align: center;
+    font-size: 1.5em;
+}    
+
+
+/* ---------- FOOTER ----------- */
+
+footer {
+    background-color: #000;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    height: max-content;
+    padding: 40px 20px;
+   
+}
+
+footer .footer_columna{
+    color:#fff;
+    width: 30%;
+
+}
+footer .footer_columna p{
+    font-weight: 300;
+    ;
+}
+
+footer  li,a, p { 
+    text-decoration: none;
+    color: #fff;
+    list-style-type: none;
+    margin-bottom: 10px;
+    text-align: left;
+}
+footer a{
+  color: red;
+}
+
+.footer_linea p{
+    background-color: #2e2e2e;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    height: 30px;
+    padding: 10px 10px 30px 10px;
+    text-align: center;   
+    margin-bottom: 0%;
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+/* PRUEBA NAV MOVIL */
+  
+.topnav {
+  overflow: hidden;
+  background-color:black;
+  position: relative;
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+
+.topnav .logo {
+  font-size: 10vw;
+  font-family: rammstein;
+  text-align: center;
+  color: red;
+}
+
+.topnav #myLinks {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#myLinks a {
+  font-family: gothamexp;
+  color: red;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 8vw;
+  /* font-size: 3em; */
+}
+#myLinks a:hover {
+  text-decoration: underline;
+}
+
+.topnav a {
+  font-family: gothamexp;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 4vw;
+}
+
+
+/*          NAV PRINCIPAL          */
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.nav {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  justify-content: center;
+  align-content: center;
+}
+.nav a {
+  display: inline-block;
+  position: relative;
+  font-family: gothamexp;
+  font-size: 4vw;
+  color: red;
+  padding: 0 3% 0 3%;
+  width: fit-content;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/*Flecha para hacer la pagina hacia arriba*/
+
+.ir-arriba{
+  display:none;
+  background-repeat:no-repeat;
+  font-size:20px;
+  color:black;
+  cursor:pointer;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  z-index:2;
+}
+
+/* ---------- Revisar Mensajes ---------- */
+
+.revmsg {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  justify-content: center;
+  align-content: center;
+}
+.revmsg a {
+  display: inline-block;
+  position: relative;
+  font-family: gothamexp;
+  font-size: 4vw;
+  color: red;
+  padding: 0 3% 0 3%;
+  width: fit-content;
+  text-align: center;
+  text-decoration: none;
+}
+
+.revmsg a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.revmsg a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ---------- MEDIA ----------- */
+
+/* ---------- PANTALLAS MENORES A 1200PX ----------- */
+
+@media only screen and (max-width: 1200px){
+   
+    .row_album img{
+        width: 300px;
+        height: 300px;
+    }
+    .formulario_contacto input{
+        width: 40vw;
+    }
+    .form_mapa .mapa{
+        width:500px;
+        height:580px;
+    }
+
+    .articulo_historia{
+        width:70% ;
+    }
+
+    .collumn {
+        width: 70%;
+        gap: 0px;
+      }
+        /* Nosotros */
+       
+    .grupo10 img{
+      height: 400px;
+      padding: 50px;
+  }
+  
+      
+
+}
+/* ---------- PANTALLAS MENORES A 800PX ----------- */
+
+@media only screen and (max-width: 800px){
+
+    .body_background{
+      background-color: #000;
+    }
+
+    #block {
+    display: none;
+    height: 60%;
+   }
+
+    #block2 {
+    display: block;
+    height: auto;
+    }
+
+    .topicon_index{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #00000000;
+    }
+
+    .topicon h1 {
+        font-size: 2em;
+        padding-top: 10px;
+        display: none;   
+    }
+
+    .topicon_index a{
+      font-size: 0.5em;
+    }
+
+    .nav{    
+        flex-direction: column;
+        display: none;
+    }
+    #nav10{
+      flex-direction: column;
+      display: flex;
+    }
+
+    .nav a{
+        font-size: 2em;
+        margin: auto;
+        font-size: 3em;
+        margin-bottom: 20px; 
+    }
+
+    
+    .grupo10 .integrante{
+      margin: auto 10px;
+    } 
+
+    .grupo10 img{
+      height: 300px;
+      width: 300px;
+  }
+
+    footer .footer_columna {
+        width: 90%;
+
+    }
+
+    .footer_linea p{
+        height: 30px;
+        width: 100%;
+        text-align: center;   
+    }
+
+    .formulario_contacto input, textarea,label,button{
+        width: 90vw;
+        margin: auto;
+    }
+    .form_mapa h2{width: 90vw;}
+    .form_mapa .mapa{ width:90vw;}
+    
+    .articulo_historia{width:90% ;}
+
+    .collumn {width: 100%;}
+
+    /* Nosotros */
+    .form_mapa h2{
+      font-size: 1.6em;
+    }
+
+
+    h1{
+      font-size: 2.6rem;
+    }  
+
+    .topnav {
+      display: flex;
+    }
+  
+
+
+};  
+

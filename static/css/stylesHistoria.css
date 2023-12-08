@@ -1,0 +1,1359 @@
+/*          FUENTES         */
+
+@font-face {
+  font-family: rammstein;
+  src: url(../font/rammstein.ttf);
+}
+@font-face {
+  font-family: gothamexp;
+  src: url(../font/gothamknightsexpand.ttf);
+}
+@font-face {
+  font-family: rocks;
+  src: url(../font/chineserocksrg.otf);
+}
+
+/*          ESTILO GENERAL          */
+
+* {
+  box-sizing: border-box;
+}
+
+
+body,
+html {
+  height: 100%;
+  text-decoration-line: none;
+  width: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  background-color: #000000;
+}
+
+@keyframes spin {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+ /*          NAV CELU         */
+
+.logo {
+  font-size: 10vw;
+  font-family: rammstein;
+  text-align: center;
+  color: red;
+}
+
+#stickyNav {
+  display: none;
+  justify-content: center;
+  background-color: black;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color:black;
+  flex-direction: column;
+
+}
+
+
+
+#myLinks {
+  display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  
+}
+
+
+
+#myLinks a {
+  font-family: gothamexp;
+  color: red;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 8vw;
+  
+}
+
+#myLinks a:hover {
+  text-decoration: underline;
+}/*          NAV PRINCIPAL          */
+.nav {
+  display: flex;
+  flex-flow: row;
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  justify-content: center;
+  align-content: center;
+}
+
+.nav a {
+  display: inline-block;
+  position: relative;
+  font-family: gothamexp;
+  font-size: 3vw;
+  color: red;
+  padding: 0 3% 0 3%;
+  width: 70%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/*Flecha para hacer la pagina hacia arriba*/
+
+.ir-arriba{
+  display:none;
+  background-repeat:no-repeat;
+  font-size:20px;
+  color:black;
+  cursor:pointer;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  z-index:2;
+}
+
+/*          CONTENIDO PRINCIPAL (NOTICIAS)        */
+
+.contenedor {
+  color: white;
+  padding: 1%;
+  background-color: #000000;
+  opacity: 1;
+  background-size: 12px 12px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #160606,
+    #160606 0.6000000000000001px,
+    #000000 0.6000000000000001px,
+    #000000
+  );
+}
+a {
+  text-decoration: none;
+  color: red;
+}
+.head p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.head {
+  text-align: center;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+img {
+  width: 100%;
+}
+
+.contenido {
+  line-height: 0;
+  word-spacing: 0.1em;
+  display: inline-block;
+  margin: 30px 2% 0 2%;
+}
+
+.columna {
+  font-size: 14px;
+  line-height: 20px;
+  width: 17.5%;
+  display: inline-block;
+  padding: 0 1% 0 1%;
+  vertical-align: top;
+  margin-bottom: 50px;
+  transition: all 0.7s;
+}
+
+.columna ul {
+  text-align: left;
+}
+
+.columna .headline {
+  text-align: center;
+  line-height: normal;
+  display: block;
+  margin: 0 auto;
+}
+
+.columna .headline.hl2 {
+  font-family: rocks;
+  font-weight: 400;
+  font-size: 36px;
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
+}
+.columna .headline.hl1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  box-sizing: border-box;
+  padding: 10px 0 10px 0;
+}
+.columna .headline.hl1:before {
+  content: "";
+  width: 100px;
+  height: 7px;
+  display: block;
+  margin: 0 auto;
+}
+.columna .headline.hl1:after {
+  content: "";
+  width: 100px;
+  height: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/*          FOOTER          */
+
+
+footer {
+  background-color: black;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: "Roboto", sans-serif;
+  height: max-content;
+  padding: 40px 20px;
+  bottom: 0;
+  position: relative;
+}
+
+.footer_columna1, .footer_columna2, .footer_columna3 {
+  color: #fff;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 2%;
+}
+
+.footer_columna2 h3, .footer_columna3 h3 {
+  width: max-content;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.footer_columna2 ul, .footer_columna3 ul {
+  width: max-content;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.footer_linea {
+  position: relative;
+  background-color: #2e2e2e;
+  top: 0;
+}
+.footer_linea p {
+  color: white;
+  background-color: #2e2e2e;
+  font-weight: 300;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin: 0;
+}
+/*  GRID PRINCIPAL *//*  GRID PRINCIPAL *//*  GRID PRINCIPAL *//*  GRID PRINCIPAL */
+.ContenedorGrid{        
+  display: grid;
+  grid-template-areas: 
+  "AntecedentesGrid"
+  "ContenedorHerzeleid"
+  "ContenedorSehnsucht"
+  "ContenedorBerlin"
+  "ContenedorMutter"
+  "ContenedorRosenrot"
+  "ContenedorVolkerball"
+  "ContenedorLiebe"
+  "ContenedorGermany"
+  "ContenedorAmerika"
+  "ContenedorParis"
+  "ContenedorRammstein"
+  "ContenedorZeit"
+  ;
+}
+/*  GRID PRINCIPAL *//*  GRID PRINCIPAL *//*  GRID PRINCIPAL *//*  GRID PRINCIPAL */
+
+/* SECCION ANTECEDENTES *//* SECCION ANTECEDENTES *//* SECCION ANTECEDENTES */
+
+
+.AntecedentesGrid{
+  grid-area: AntecedentesGrid;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 0.05fr 0.20fr 0.05fr 0.65fr 0.05fr;
+  grid-template-rows: auto;
+  grid-template-areas:  ". AntIMG . AntTexto1 ."
+  ;
+}
+.AntIMG{
+  grid-area: AntIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 0.05fr 0.90fr 0.05fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  ". HIMG1 ."
+  ;
+  width: 100%;
+}
+.AntIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+}
+.AntIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.AntTexto1{
+  grid-area: AntTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+
+
+                    
+/* .AntecedentesGrid{
+  grid-area: AntecedentesGrid;
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  grid-auto-rows: minmax(100px, auto);
+  justify-items: center;
+}
+.AntIMG{
+  grid-column: 1 / 2;
+  grid-row: 1;
+  border-style: double;
+  border-color: red;
+
+  width: 60%;
+}
+.AntTexto{
+
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+} */
+/* SECCION ANTECEDENTES *//* SECCION ANTECEDENTES *//* SECCION ANTECEDENTES */
+
+/* SECCION HERZELEID *//* SECCION HERZELEID *//* SECCION HERZELEID *//* SECCION HERZELEID */
+.ContenedorHerzeleid{
+  grid-area: ContenedorHerzeleid;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:  "HerzeleidTexto1"
+                        "HerzeleidIMG"
+                        "HerzeleidTexto2";
+}
+.HerzeleidIMG{
+  grid-area: HerzeleidIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 0.34fr 0.32fr 0.34fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 ."
+  ;
+  width: 100%;
+}
+.HIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  width: 100%;
+}
+.H1IMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+
+.HerzeleidTexto1{
+  grid-area: HerzeleidTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+.HerzeleidTexto2{
+  grid-area: HerzeleidTexto2;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION HERZELEID *//* SECCION HERZELEID *//* SECCION HERZELEID *//* SECCION HERZELEID */
+
+/* SECCION SEHNSUCHT *//* SECCION SEHNSUCHT *//* SECCION SEHNSUCHT *//* SECCION SEHNSUCHT */
+.ContenedorSehnsucht{
+  grid-area: ContenedorSehnsucht;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "SehnsuchtTexto1"
+                        "SehnsuchtIMG";
+}
+.SehnsuchtIMG{
+  grid-area: SehnsuchtIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ;
+  width: 100%;
+}
+.SehnsuchtIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.SehnsuchtIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.SehnsuchtIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.SehnsuchtIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.SehnsuchtTexto1{
+  grid-area: SehnsuchtTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION SEHNSUCHT *//* SECCION SEHNSUCHT *//* SECCION SEHNSUCHT *//* SECCION SEHNSUCHT */
+
+/* SECCION BERLIN *//* SECCION BERLIN *//* SECCION BERLIN *//* SECCION BERLIN *//* SECCION BERLIN */
+.ContenedorBerlin{
+  grid-area: ContenedorBerlin;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "BerlinTexto1"
+                        "BerlinIMG";
+}
+.BerlinIMG{
+  grid-area: BerlinIMG;
+  align-items: center;
+  /* justify-items: center; */
+  display: grid;
+  align-items: center;
+  /* grid-template-columns: 0.20fr 0.60fr 0.10fr 0.60fr 0.20fr; */
+  grid-template-columns: 0.34fr 0.32fr 0.34fr;
+  grid-template-rows: 1fr;
+  /* grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ; */
+  grid-template-areas:
+  ". HIMG1 ." 
+  ;
+  width: 100%;
+}
+.BerlinIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.BerlinIMG1 img{
+  width: 100%;
+}
+.BerlinIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.BerlinIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.BerlinTexto1{
+  grid-area: BerlinTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION BERLIN *//* SECCION BERLIN *//* SECCION BERLIN *//* SECCION BERLIN *//* SECCION BERLIN */
+/* SECCION MUTTER *//* SECCION MUTTER *//* SECCION MUTTER *//* SECCION MUTTER *//* SECCION MUTTER */
+.ContenedorMutter{
+  grid-area: ContenedorMutter;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "MutterTexto1"
+                        "MutterIMG";
+}
+.MutterIMG{
+  grid-area: MutterIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 0.34fr 0.32fr 0.34fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 ."
+  ;
+  width: 100%;
+}
+.MutterIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+}
+.MutterIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.MutterTexto1{
+  grid-area: MutterTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* .MutterTexto2{
+  grid-area: MutterTexto2;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+} */
+/* SECCION MUTTER *//* SECCION MUTTER *//* SECCION MUTTER *//* SECCION MUTTER *//* SECCION MUTTER */
+/* SECCION ROSENROT *//* SECCION ROSENROT *//* SECCION ROSENROT *//* SECCION ROSENROT *//* SECCION ROSENROT */
+.ContenedorRosenrot{
+  grid-area: ContenedorRosenrot;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "RosenrotTexto1"
+                        "RosenrotIMG";
+}
+.RosenrotIMG{
+  grid-area: RosenrotIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ;
+  width: 100%;
+}
+.RosenrotIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.RosenrotIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.RosenrotIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.RosenrotIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.RosenrotTexto1{
+  grid-area: RosenrotTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION ROSENROT *//* SECCION ROSENROT *//* SECCION ROSENROT *//* SECCION ROSENROT *//* SECCION ROSENROT */
+/* SECCION VOLKERBALL *//* SECCION VOLKERBALL *//* SECCION VOLKERBALL *//* SECCION VOLKERBALL */
+.ContenedorVolkerball{
+  grid-area: ContenedorVolkerball;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "VolkerballTexto1"
+                        "VolkerballIMG";
+}
+.VolkerballIMG{
+  grid-area: VolkerballIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ;
+  width: 100%;
+}
+.VolkerballIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.VolkerballIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.VolkerballIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.VolkerballIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.VolkerballTexto1{
+  grid-area: VolkerballTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION VOLKERBALL *//* SECCION VOLKERBALL *//* SECCION VOLKERBALL *//* SECCION VOLKERBALL */
+/* SECCION LIEBE IST FUR ALLE DA *//* SECCION LIEBE IST FUR ALLE DA *//* SECCION LIEBE IST FUR ALLE DA */
+.ContenedorLiebe{
+  grid-area: ContenedorLiebe;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "LiebeTexto1"
+                        "LiebeIMG";
+}
+/* .LiebeIMG{
+  grid-area: LiebeIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: repeat(2 1fr);
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ". HIMG3 . HIMG4 ."
+  ;
+  width: 100%;
+} */
+.LiebeIMG{
+  grid-area: LiebeIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  /* grid-template-columns:  0.05fr 0.225fr 0.225fr 0.225fr 0.225fr  0.05fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 HIMG2 HIMG3 HIMG4 ."
+  ; */
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+      grid-template-rows: repeat(2 1fr);
+      grid-template-areas: 
+      ". HIMG1 . HIMG2 ."
+      ". HIMG3 . HIMG4 ."
+      ;
+  width: 100%;
+}
+.LiebeIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.LiebeIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.LiebeIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.LiebeIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.LiebeIMG3{
+  grid-area: HIMG3;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.LiebeIMG3 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.LiebeIMG4{
+  grid-area: HIMG4;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.LiebeIMG4 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.LiebeTexto1{
+  grid-area: LiebeTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION LIEBE IST FUR ALLE DA *//* SECCION LIEBE IST FUR ALLE DA *//* SECCION LIEBE IST FUR ALLE DA */
+/* SECCION MADE IN GERMANY *//* SECCION MADE IN GERMANY *//* SECCION MADE IN GERMANY *//* SECCION MADE IN GERMANY */
+.ContenedorGermany{
+  grid-area: ContenedorGermany;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:  "GermanyTexto1"
+                        "GermanyIMG"
+                        "GermanyTexto2";
+}
+.GermanyIMG{
+  grid-area: GermanyIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ;
+  width: 100%;
+}
+.GermanyIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.GermanyIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.GermanyIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.GermanyIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.GermanyTexto1{
+  grid-area: GermanyTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+.GermanyTexto2{
+  grid-area: GermanyTexto2;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION MADE IN GERMANY *//* SECCION MADE IN GERMANY *//* SECCION MADE IN GERMANY *//* SECCION MADE IN GERMANY */
+/* SECCION AMERIKA *//* SECCION AMERIKA *//* SECCION AMERIKA *//* SECCION AMERIKA *//* SECCION AMERIKA */
+.ContenedorAmerika{
+  grid-area: ContenedorAmerika;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:  "AmerikaTexto1"
+                        "AmerikaIMG"
+                        "AmerikaTexto2";
+}
+.AmerikaIMG{
+  grid-area: AmerikaIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ;
+  width: 100%;
+}
+.AmerikaIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.AmerikaIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.AmerikaIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.AmerikaIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.AmerikaTexto1{
+  grid-area: AmerikaTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+.AmerikaTexto2{
+  grid-area: AmerikaTexto2;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION AMERIKA *//* SECCION AMERIKA *//* SECCION AMERIKA *//* SECCION AMERIKA *//* SECCION AMERIKA */
+/* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS */
+.ContenedorParis{
+  grid-area: ContenedorParis;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "ParisTexto1"
+                        "ParisIMG";
+}
+.ParisIMG{
+  grid-area: ParisIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ;
+  width: 100%;
+}
+.ParisIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.ParisIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.ParisIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.ParisIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.ParisTexto1{
+  grid-area: ParisTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS *//* SECCION PARIS */
+/* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN */
+.ContenedorRammstein{
+  grid-area: ContenedorRammstein;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "RammsteinTexto1"
+                        "RammsteinIMG";
+}
+.RammsteinIMG{
+  grid-area: RammsteinIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: repeat(2 1fr);
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ". HIMG3 . HIMG4 ."
+  ;
+  width: 100%;
+}
+.RammsteinIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.RammsteinIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.RammsteinIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.RammsteinIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.RammsteinIMG3{
+  grid-area: HIMG3;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.RammsteinIMG3 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.RammsteinIMG4{
+  grid-area: HIMG4;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.RammsteinIMG4 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.RammsteinTexto1{
+  grid-area: RammsteinTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN *//* SECCION RAMMSTEIN */
+/* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT */
+.ContenedorZeit{
+  grid-area: ContenedorZeit;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:  "ZeitTexto1"
+                        "ZeitIMG";
+}
+.ZeitIMG{
+  grid-area: ZeitIMG;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  ". HIMG1 . HIMG2 ."
+  ;
+  width: 100%;
+}
+.ZeitIMG1{
+  grid-area: HIMG1;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.ZeitIMG1 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.ZeitIMG2{
+  grid-area: HIMG2;
+  border-style: double;
+  border-color: red;
+  height: 85%;
+}
+.ZeitIMG2 img{
+  width: 100%;
+  height: 30vw;
+  max-height: 30vw;
+  min-height: 94px;
+}
+.ZeitTexto1{
+  grid-area: ZeitTexto1;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+}
+/* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT *//* SECCION ZEIT */
+/* FILTRO GRIS IMAGENES *//* FILTRO GRIS IMAGENES *//* FILTRO GRIS IMAGENES *//* FILTRO GRIS IMAGENES */
+.ContenedorGrid img {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  transition: all 1s ease;
+}
+
+.ContenedorGrid img:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  transition: all 0.4s ease;
+}
+/* FILTRO GRIS IMAGENES *//* FILTRO GRIS IMAGENES *//* FILTRO GRIS IMAGENES *//* FILTRO GRIS IMAGENES */
+  
+  
+  /*________________________________________________________________________________________________________________________________*/
+  /*MEDIAQUERIES*/
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+  
+    #block1 {
+      display: none;
+    }
+  
+    #block2 {
+      display: block;
+    }
+  
+    .columna {
+      width: 100%;
+    }
+  
+    .topnav {
+      display: flex;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+    .topicon {
+      display: none;
+  
+    }
+  
+    .topicon a {
+      font-size: 10vw;
+    }
+
+    /*          SWITCH ENTRE NAV PRINCIPAL Y CELU          */
+
+    #stickyNav {
+      display: flex;
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .AntecedentesGrid{
+      grid-area: AntecedentesGrid;
+      display: grid;
+      grid-template-columns: 0.05fr 0.90fr 0.05fr;
+      grid-template-rows: auto auto;
+      grid-auto-rows: minmax(100px, auto);
+      justify-items: center;
+      align-items: center;
+      grid-template-areas: 
+      ". AntTexto1 ."
+      ". AntIMG ."
+      ;
+    }
+    .AntIMG{
+      grid-area: AntIMG;
+      width: 31vw;
+      height: fit-content;
+      
+    }
+    .AntIMG img{
+      height: 30vw;
+    }
+    .AntTexto{
+      grid-area: AntTexto;
+    }
+    .SehnchsutIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ;
+    }
+    .RosenrotIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ;
+    }
+    .VolkerballIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ;
+    }
+    .LiebeIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ". HIMG3 ."
+      ". HIMG4 ."
+      ;
+    }
+    .GermanyIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ;
+    }
+    .AmerikaIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ;
+    }
+    .ParisIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ;
+    }
+    .RammsteinIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ". HIMG3 ."
+      ". HIMG4 ."
+      ;
+    }
+    .ZeitIMG{
+      grid-template-columns:  0.05fr 0.90fr 0.05fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: 
+      ". HIMG1 ."
+      ". HIMG2 ."
+      ;
+    }
+    
+    
+
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .columna {
+      width: 90%;
+    }
+  
+    .nav a {
+      font-size: 4vw;
+    }
+  
+    .topicon a {
+      font-size: 4vw;
+    }
+    
+    
+    
+  }
+  
+  @media only screen and (max-width: 670px) {
+    
+    .footer_columna1 {
+      text-align: center;
+      width: 100%;
+    }
+    .footer_columna2 {
+      width: max-content;
+    }
+    .footer_columna3 {
+      width: max-content;
+    }
+    /* .LiebeIMG{
+      grid-template-columns:  0.20fr 0.44fr 0.10fr 0.44fr 0.20fr;
+      grid-template-rows: repeat(2 1fr);
+      grid-template-areas: 
+      ". HIMG1 . HIMG2 ."
+      ". HIMG3 . HIMG4 ."
+      ;
+    } */
+  }
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .columna {
+      width: 90%;
+    }
+    .nav a {
+      font-size: 4vw;
+    }
+  
+    .topicon a {
+      font-size: 4vw;
+    }
+    
+    
+  }
+  /*  */
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .columna {
+      width: 90%;
+    }
+    .topicon a {
+      font-size: 4vw;
+    }
+    .nav a {
+      font-size: 4vw;
+    }
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .columna {
+      width: 90%;
+    }
+    .topicon a {
+      font-size: 4vw;
+    }
+    .nav a {
+      font-size: 4vw;
+    }
+    .LiebeIMG{
+      grid-template-columns:  0.05fr 0.225fr 0.225fr 0.225fr 0.225fr  0.05fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 
+      ". HIMG1 HIMG2 HIMG3 HIMG4 ."
+    ;
+    }
+    .RammsteinIMG{
+      grid-template-columns:  0.05fr 0.225fr 0.225fr 0.225fr 0.225fr  0.05fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: 
+      ". HIMG1 HIMG2 HIMG3 HIMG4 ."
+    ;
+    }
+  }
+
+
+  
