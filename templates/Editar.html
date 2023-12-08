@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMMSTEIN FAN PAGE</title>
+    <link rel="stylesheet" href="/static/css\stylesAdminNosotros.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/static/img/Favicon.ico" type="image/x-icon">
+    <script src="/static/src\jquery.min.js"></script>
+    <script src="/static/src/jquery.vide.js"></script>
+    <script src="/static/src/wow.min.js"></script>
+    <script src="/static/src/nav.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+</head>
+
+<body id="body">
+    
+     <!-- NAVEGADOR PARA CELU-->
+     <div id="stickyNav">
+      <div class="topnav">
+          <a href="javascript:void(0);" class="logo" onclick="myFunction()">RAMMSTEIN</a>     
+          <div id="myLinks">
+              <a href="/index">INICIO</a>
+              <a href="/discografia">DISCOGRAFIA</a>
+              <a href="/historia">HISTORIA</a>
+              <a href="/nosotros">NOSOTROS</a>
+          </div>        
+        </div>
+      </div>
+        
+      <!-- NAVEGADOR PRINCIPAL -->
+      <nav id="nav1" class="nav">
+          <a href="/index">INICIO</a>
+          <a href="/discografia">DISCOGRAFIA</a>
+          <a href="/historia">HISTORIA</a>
+          <a href="/nosotros">NOSOTROS</a>
+      </nav>
+  
+  <!-- Boton hacia arriba -->
+  <a class="ir-arriba"  javascript:void(0) title="Volver arriba">
+      <span class="fa-stack">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-arrow-up fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+    <!-- NAVEGADOR -->
+    <div class="contenedor">
+      <section class="form_mapa">
+        <article>
+            <h2 >Editar</h2>
+            <p>Aca tiene que ir los inputs edit</p>
+            {% for msg in msglist %}
+                <form class="formulario_contacto" method="post" action="/update" enctype="multipart/form-data">
+                
+                <label>ID:</label>
+                <input type="text" value="{{ msg[0] }}" name="IDs" id="IDs">
+                
+                <label>Nombre:</label>
+                <input type="text" value="{{ msg[1] }}" name="Nombre" id="Nombre">
+
+                <label>Email:</label>
+                <input type="text" value="{{ msg[2] }}" name="Email" id="Email">
+
+                <label>Mensaje:</label>
+                <input type="text" value="{{ msg[3] }}" name="Mensaje" id="Mensaje">
+                <label>Status</label>
+                <input type="text" value="{{ msg[4] }}" name="Status" id="Status">
+                <input type="submit" value="Actualizar">
+                
+                </form>
+            {% endfor %}
+            
+        </article>
+      </section>
+    </div> <!-- Fin contenedor -->
+
+    <!-- FOOTER VALGA LA REDUNDANCIA-->
+    <footer>
+      <div class="footer_columna1">
+          <h3>Rammstein</h3>
+          <p>Rammstein es una banda alemana de metal industrial fundada el 31 de diciembre de 1993 por los músicos
+              Till Lindemann, Richard Z. Kruspe, Oliver Riedel, Paul Landers, Christian Lorenz y Christoph Schneider.
+          </p>
+      </div>
+
+      <div class="footer_columna2">
+          <h3>Mapa de Sitio</h3>
+          <ul>
+                <li><a href="/index">INICIO</a></li>
+                <li><a href="/discografia">DISCOGRAFIA</a></li>
+                <li><a href="/historia">HISTORIA</a></li>
+                <li><a href="/nosotros">NOSOTROS</a></li>
+          </ul>
+      </div>
+
+      <div class="footer_columna3">
+          <h3>Redes Sociales</h3>
+          <ul>
+              <li><a href="#"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i> Facebook</a></li>
+              <li><a href="#"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i> Twitter </a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i> Instagram</a></li>
+          </ul>
+      </div>
+  </footer>
+
+  <div class="footer_linea">
+      <p>Codo a Codo 2023 - Comisión 23543 Python - Grupo 10</p>
+  </div>
+
+</body>
+
+</html>
