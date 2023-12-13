@@ -84,6 +84,7 @@ html {
 }/*          NAV PRINCIPAL          */
 .nav {
   display: flex;
+  flex-wrap: nowrap!important;
   flex-flow: row;
   position: relative;
   top: 0;
