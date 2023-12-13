@@ -99,7 +99,7 @@ html {
   position: relative;
   font-family: gothamexp;
   font-size: 3vw;
-  color: red;
+  color: red!important;
   padding: 0 3% 0 3%;
   width: 70%;
   text-align: center;
@@ -114,7 +114,7 @@ html {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: red;
+  background-color: red!important;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -229,19 +229,7 @@ img {
   margin: 0 auto;
 }
 
-table, td, th {  
-  border: 1px solid #ddd;
-  text-align: left;
-}
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 15px;
-}
 
 
 /*          FOOTER          */
@@ -335,12 +323,7 @@ margin-top: 0px;
   font-family: 'Roboto', sans-serif;
   font-size: 1em;}
 
-button{
-  height: 50px;
-  color: rgb(0, 0, 0);
-  background-color:rgb(255, 255, 255);
-  font-size: 1em;
-}
+
 
 .form_mapa .mapa{
   width:800px;
@@ -596,7 +579,7 @@ html {
   position: relative;
   font-family: gothamexp;
   font-size: 3vw;
-  color: red;
+  color: red!important;
   padding: 0 3% 0 3%;
   width: 70%;
   text-align: center;
@@ -611,7 +594,7 @@ html {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: red;
+  background-color: red!important;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
