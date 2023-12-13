@@ -51,17 +51,33 @@
   </header>
   <!-- Main -->
   <main class="main">
-
+    <section class="opiniones" id="opiniones">
+      
+      <div class="comentario">
+       <div class="titulo2"> comentarios</div>
+      </div>
+      
+        <div class="contcaja">
+          {% for msg in msglist %}
+          <div class="caja">
+            <h2 class="nombre">{{msg[1]}}</h2>
+            <h4 class="mail">{{msg[2]}}</h4>
+            <p class="mensaje">{{msg[3]}}</p>            
+          </div>
+          {% endfor %}
+        </div>
+        
+    </section>
     <section class="form_mapa">
       <article>
           <h2 >Formulario de contacto</h2>
-          <form class="formulario_contacto" name="formulario" method="post" action="/storenosotros" enctype="multipart/form-data">
+          <form class="formulario_contacto" name="formulario" method="post" action="/nosotros" enctype="multipart/form-data">
               <label >Nombre y Apellido</label>
               <input name="fnombre" type="text" placeholder="Ingrese su Nombre y Apellido" value="" id="fnombre">
               <label>Email</label>
               <input name="fcorreo" type="email" placeholder="Ingrese su correo" id="fcorreo">
               <label >Mensaje</label>
-              <input name="fmensaje" id="fmensaje" placeholder="Ingrese su Mensaje..."></input>
+              <input name="fmensaje" id="fmensaje" placeholder="Ingrese su Mensaje...">
               <button id="btn" onclick="mensaje"  type="submit" value="Agregar"> Enviar</button>
           </form>
           <br>
@@ -75,7 +91,12 @@
         <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4200.738595009238!2d-58.450758181280285!3d-34.545265525455235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43ae5dde0ed%3A0x79bbb6038fd01b0c!2sClub%20Atl%C3%A9tico%20River%20Plate!5e0!3m2!1ses!2sar!4v1696199254248!5m2!1ses!2sar"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa con Dirección"></iframe>
       </article>
     </section>
+     <!-- NAVEGADOR -->
+     
+    <!-- Fin contenedor -->
+
     
+
     <section class="titulo">
       <h1>Integrantes Grupo 10 - Comisión 23543 Python</h1>
     </section>

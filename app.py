@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, session
 from flaskext.mysql import MySQL
+import pyautogui
 
+pyautogui.hotkey('f5') #Simulates F5 key press = page refresh
 
 app=Flask(__name__)
 app._static_folder = "static"
@@ -31,12 +33,18 @@ def discografia():
 def historia():
    return render_template("historia.html")
 
-@app.route("/nosotros")
+@app.route("/nosotros" ,methods=["GET"])
 def nosotros():
-    return render_template("nosotros.html")
+    sql = "SELECT * FROM tpocrud.msglist ;"
+    conn=mysql.connect()
+    cursor=conn.cursor()
+    cursor.execute(sql)
+    msglist=cursor.fetchall()
+    conn.commit()
+    return render_template("nosotros.html" ,msglist=msglist)
 
 # /Store de NOSOTROS
-@app.route("/storenosotros",methods=["POST"])
+@app.route("/nosotros",methods=["POST","GET"])
 def storage():
     NombreyApellido = request.form["fnombre"]
     Email = request.form["fcorreo"]
@@ -49,7 +57,8 @@ def storage():
     cursor = conn.cursor()
     cursor.execute(sql,datos)
     conn.commit()
-    return render_template("nosotros.html")
+    return redirect("/nosotros" ,)
+
 # /Store de NOSOTROS
   
 
