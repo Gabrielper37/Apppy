@@ -1,22 +1,16 @@
 from flask import Flask, render_template, request, redirect, session
 from flaskext.mysql import MySQL
-import pyautogui
-
-pyautogui.hotkey('f5') #Simulates F5 key press = page refresh
 
 app=Flask(__name__)
 app._static_folder = "static"
 app.secret_key = "Hello_World"
 
 mysql = MySQL()
-app.config['MYSQL_DATABASE_HOST']='localhost'
-app.config['MYSQL_DATABASE_USER']='root'
-app.config['MYSQL_DATABASE_PASSWORD']=''
-app.config['MYSQL_DATABASE_BD']='tpocrud'
+app.config['MYSQL_DATABASE_HOST']='Gabrielper.mysql.pythonanywhere-services.com'
+app.config['MYSQL_DATABASE_USER']='Gabrielper'
+app.config['MYSQL_DATABASE_PASSWORD']='potatoman'
+app.config['MYSQL_DATABASE_BD']='Gabrielper$tpocrud'
 mysql.init_app(app)
-
-
-
 
 @app.route("/")
 def index():
@@ -35,7 +29,7 @@ def historia():
 
 @app.route("/nosotros" ,methods=["GET"])
 def nosotros():
-    sql = "SELECT * FROM tpocrud.msglist ;"
+    sql = "SELECT * FROM Gabrielper$tpocrud.msglist ;"
     conn=mysql.connect()
     cursor=conn.cursor()
     cursor.execute(sql)
@@ -51,13 +45,12 @@ def storage():
     Mensaje = request.form["fmensaje"]
     Respuesta = "No Respondido."
     datos = (NombreyApellido,Email,Mensaje,Respuesta)
-    sql = "INSERT INTO tpocrud.msglist (ID, NombreyApellido, Email, Mensaje, Status) VALUES (NULL, %s, %s, %s, %s)"
-    # sql = "INSERT INTO tpocrud.msglist (ID, NombreyApellido, Email, Mensaje, Status) VALUES (NULL, '%s', '%s', '%s', '%s')";
+    sql = "INSERT INTO Gabrielper$tpocrud.msglist (ID, NombreyApellido, Email, Mensaje, Status) VALUES (NULL, %s, %s, %s, %s)"
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql,datos)
     conn.commit()
-    return redirect("/nosotros" ,)
+    return redirect("/nosotros")
 
 # /Store de NOSOTROS
   
@@ -73,7 +66,7 @@ def check():
     # Tupla para el cursor, si va por separado no funciona.
     datos = (user,password)            
     # El query averigua si la tupla coincide con algun "Users" y "Passwords" en la tabla.
-    sql = "SELECT Users, Passwords FROM tpocrud.loginsystem WHERE Users = %s AND Passwords = %s"
+    sql = "SELECT Users, Passwords FROM Gabrielper$tpocrud.loginsystem WHERE Users = %s AND Passwords = %s"
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql,datos)
@@ -96,65 +89,54 @@ def check():
         return render_template("Login.html", status="Usuario y/o contraseña incorrecto/s")
     # "status" sirve para informarle al usuario si hay algun problema
 
-    
-
-
-
-
-
 @app.route("/adminnosotros", methods=["GET"])
 def AdminNosotros():
     # Recuperamos Checker de la sesion anterior.
     checker = session.get("checker", None)
     # Con el if aseguramos que no puedan llegar hasta aca sin iniciar sesion
     if checker == True:
-        sql = "SELECT * FROM tpocrud.msglist ;"
+        sql = "SELECT * FROM Gabrielper$tpocrud.msglist ;"
         conn=mysql.connect()
         cursor=conn.cursor()
         cursor.execute(sql)
         msglist=cursor.fetchall()
         conn.commit()
-        return render_template("adminnosotros.html",msglist=msglist)
+        return render_template("AdminNosotros.html",msglist=msglist)
     else:
         return render_template("Login.html", status="No ha iniciado sesion.")
     
 
 @app.route("/adminnosotros/destroy/<int:id>")
 def destroy(id):
-    conn=mysql.connect()
-    cursor=conn.cursor()
-    sql="DELETE FROM tpocrud.msglist WHERE id=%s"
-    cursor.execute(sql,id)
-    conn.commit()
-    return redirect("/adminnosotros")
+    checker = session.get("checker", None)
+    if checker == True:
+        conn=mysql.connect()
+        cursor=conn.cursor()
+        sql="DELETE FROM Gabrielper$tpocrud.msglist WHERE id=%s"
+        cursor.execute(sql,id)
+        conn.commit()
+        return redirect("/adminnosotros")
+    else:
+        return render_template("Login.html", status="No ha iniciado sesion.")
 
-@app.route("/editar/<int:id>")
-
-def edit(id):
-
-    sql = "SELECT * FROM tpocrud.msglist WHERE id=%s;"
-    conn=mysql.connect()
-    cursor=conn.cursor()
-    cursor.execute(sql,id)
-    msglist=cursor.fetchall()
-    conn.commit()
-    return render_template("Editar.html",msglist=msglist)
-
-@app.route('/update', methods=['POST',"GET"])
-def update():
-    IDs=request.values["IDs"]
-    Nombre=request.form['Nombre']
-    Email=request.form['Email']
-    Mensaje=request.form['Mensaje']
-    Status=request.form['Status']
-
-    datos=(Nombre,Email,Mensaje,Status,IDs)
-    conn = mysql.connect()
-    cursor = conn.cursor()
-    sql = "UPDATE tpocrud.msglist SET NombreyApellido=%s, Email=%s, Mensaje=%s, Status=%s WHERE id=%s;"
-    cursor.execute(sql,datos)
-    conn.commit()
-    return redirect('/adminnosotros')
+@app.route('/update/<int:id>', methods=['POST',"GET"])
+def update(id):
+    checker = session.get("checker", None)
+    if checker == True:
+        # IDs=request.values["IDs"]
+        Nombre=request.form['Nombre']
+        Email=request.form['Email']
+        Mensaje=request.form['Mensaje']
+        Status=request.form['Status']
+        datos=(Nombre,Email,Mensaje,Status,id)
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        sql = "UPDATE Gabrielper$tpocrud.msglist SET NombreyApellido=%s, Email=%s, Mensaje=%s, Status=%s WHERE id=%s;"
+        cursor.execute(sql,datos)
+        conn.commit()
+        return redirect('/adminnosotros')
+    else:
+        return render_template("Login.html", status="No ha iniciado sesion.")
 
 
 
