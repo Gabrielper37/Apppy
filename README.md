@@ -1,0 +1,41 @@
+Paquetes necesarios en Visual Studio Code:
+Package                Version
+---------------------- -------
+blinker                1.7.0
+click                  8.1.7
+colorama               0.4.6
+Flask                  2.3.2
+Flask-Cors             4.0.0
+Flask-MySQL            1.5.2
+greenlet               3.0.2
+itsdangerous           2.1.2
+Jinja2                 3.1.2
+MarkupSafe             2.1.3
+mysql-connector-python 8.2.0
+pip                    23.3.1
+protobuf               4.21.12
+PyMySQL                1.1.0
+SQLAlchemy             2.0.23
+typing_extensions      4.9.0
+Werkzeug               3.0.1
+
+Paquetes necesarios instalados para el virtual enviroment:
+Package                Version
+---------------------- -------
+blinker                1.7.0
+click                  8.1.7
+colorama               0.4.6
+Flask                  2.3.2
+Flask-Cors             4.0.0
+Flask-MySQL            1.5.2
+itsdangerous           2.1.2
+Jinja2                 3.1.2
+MarkupSafe             2.1.3
+mysql-connector-python 8.2.0
+mysqlclient            2.2.0
+pip                    22.1.2
+protobuf               4.21.12
+PyMySQL                1.1.0
+setuptools             62.6.0
+Werkzeug               3.0.1
+wheel                  0.37.1
